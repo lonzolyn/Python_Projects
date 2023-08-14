@@ -1,0 +1,69 @@
+# 1. name_args — Accepts any number of named arguments and prints them in the pattern key : value one at a time.
+def name_arg(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+# Example usage
+name_arg(name="Alice", age=30, city="New York")
+
+#2. all_true - Returns True if all the elements in an iterable are true. Hint: there is an existing built-in function that could be very helpful here.
+def all_true(iterable):
+    return all(iterable)
+
+# Example usage
+list_of_values = [True, True, True, False]
+result = all_true(list_of_values)
+print(result)  # This will output False
+
+#3. one_true - Returns True if one of the elements in an iterable is true. Hint: there is an existing built-in function that could be very helpful here.
+def one_true(iterable):
+    return any(iterable)
+
+# Example usage
+list_of_values = [False, True, False, False]
+result = one_true(list_of_values)
+print(result)  # This will output True
+
+#4. recursive_factorial - Uses recursion to find the factorial of an integer.
+def recursive_factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * recursive_factorial(n - 1)
+
+# Example usage
+number = 5
+result = recursive_factorial(number)
+print(f"The factorial of {number} is {result}")
+
+#5. recursive_deduplicate - Recursively removes all adjacent duplicate letters from a string.
+Input: AABBCCDD
+Output: ABCD
+def recursive_deduplicate(s):
+    if len(s) <= 1:
+        return s
+    
+    if s[0] == s[1]:
+        return recursive_deduplicate(s[1:])
+    else:
+        return s[0] + recursive_deduplicate(s[1:])
+
+# Example usage
+input_string = "AABBCCDD"
+output_string = recursive_deduplicate(input_string)
+print(output_string)  # This will output "ABCD"
+
+#6. recursive_reverse - Uses recursion to reverse a string.
+def recursive_reverse(s):
+    if len(s) <= 1:
+        return s
+    else:
+        return recursive_reverse(s[1:]) + s[0]
+
+# Example usage
+input_string = "Hello, World!"
+output_string = recursive_reverse(input_string)
+print(output_string)  # This will output "!dlroW ,olleH"
+
+
+
